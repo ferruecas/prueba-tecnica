@@ -20,6 +20,7 @@ function App() {
           "Content-Type": "application/json",
         },
       });
+      
       if (!response.ok) {
         throw new Error("Pagina no respone");
       }
@@ -27,17 +28,23 @@ function App() {
       const jsonData = await response.json();
       const userListData = jsonData.results;
 
-      let Listado = [];
-
-      for (let index = 0; index < userListData.length; index++) {
-        const element = userListData[index];
-        //se agregan propiedades al listado
-        element["visible"] = false;
-        element["filter"] = false;
-        element["id"] = index;
+      // for (let index = 0; index < userListData.length; index++) {
+      //   const element = userListData[index];
+      //   //se agregan propiedades al listado
+      //   element["visible"] = false;
+      //   element["filter"] = false;
+      //   element["id"] = index;
         
-        Listado.push(element);
-      }
+      //   Listado.push(element);
+      // }
+
+     let Listado = userListData.map((element, index) => ({
+        ...element,
+        visible: false,
+        filter: false,
+        id: index
+      }));
+
 
       setUserList(Listado);
     } catch (error) {
@@ -54,9 +61,13 @@ function App() {
   const restart = () => {
     let Listado = [...userList];
 
-    for (let index = 0; index < Listado.length; index++) {
-      Listado[index]["visible"] = false;
-    }
+    // for (let index = 0; index < Listado.length; index++) {
+    //   Listado[index]["visible"] = false;
+    // }
+    Listado=Listado.map((data) => ({
+      ...data,
+      visible: false
+    }));
 
     setUserList(ChangeColor(isColored, Listado));
   };
@@ -111,11 +122,11 @@ function App() {
     setIsDescending(!isDescending);
   };
 
-  const filterByCountry = (query) => {
-    debugger
-    setCountryQuery(query);
-    //eliminamos los espacios inciales y finales en blanco
-    if (query.trim() === "") {
+  const filterByCountry = (value) => {
+    
+    setCountryQuery(value);
+
+    if (value.trim() === "") {
       let Listado = [];
       for (let index = 0; index < userList.length; index++) {
         const element = userList[index];
@@ -126,16 +137,16 @@ function App() {
     } else {
       let Listado = [...userList];
       const filteredData = Listado.filter((data) =>
-        data.location.country.toLowerCase().includes(query.toLowerCase())
+        data.location.country.toLowerCase().includes(value.toLowerCase())
       );
       for (let index = 0; index < Listado.length; index++) {
         Listado[index]["filter"] = true;//propiedad de la tabla
         for (let index2 = 0; index2 < filteredData.length; index2++) {
-  
-          // const element2 = filteredData[index2];
+
           if (Listado[index].id === filteredData[index2].id) {
             Listado[index]["filter"] = false;
           }
+
         }
       }
       setUserList(ChangeColor(isColored, Listado));
