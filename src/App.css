@@ -14,17 +14,18 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   display: block;
-  font-size: 2em;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
 }
+input{
+  padding: 1px 2px;
+}
 
 
-
-.rowClass:hover {
+tbody tr:hover {
   background-color: #09f;
   cursor: pointer;
 }
@@ -34,11 +35,8 @@ button:hover {
 }
 
 table {
-
   text-align: center;
   color: #213547;
-
-
 }
 
 td {
@@ -58,4 +56,10 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color .25s
+}
+header {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 32px;
 }

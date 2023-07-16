@@ -48,7 +48,7 @@ function App() {
   const DELETE = (index) => {
     const updatedUserList = [...userList];
     updatedUserList[index].visible = true;
-    setUserList(CambiarColores(isColored, updatedUserList));
+    setUserList(ChangeColor(isColored, updatedUserList));
   };
 
   const restart = () => {
@@ -58,17 +58,17 @@ function App() {
       Listado[index]["visible"] = false;
     }
 
-    setUserList(CambiarColores(isColored, Listado));
+    setUserList(ChangeColor(isColored, Listado));
   };
 
   const toggleColor = () => {
     let Listado = [...userList];
     setIsColored(!isColored);   
 
-    setUserList(CambiarColores(!isColored, Listado));
+    setUserList(ChangeColor(!isColored, Listado));
   };
 
-  const CambiarColores = (state, Listado) => {
+  const ChangeColor = (state, Listado) => {
     let row = "";
     for (let index = 0; index < Listado.length; index++) {
       if (Listado[index]["visible"] || Listado[index]["filter"] || !state) {
@@ -107,7 +107,7 @@ function App() {
       return 0;
     });
 
-    setUserList(CambiarColores(isColored, sortedData));
+    setUserList(ChangeColor(isColored, sortedData));
     setIsDescending(!isDescending);
   };
 
@@ -122,7 +122,7 @@ function App() {
         element["filter"] = false;
         Listado.push(element);
       }
-      setUserList(CambiarColores(isColored, Listado));
+      setUserList(ChangeColor(isColored, Listado));
     } else {
       let Listado = [...userList];
       const filteredData = Listado.filter((data) =>
@@ -138,7 +138,7 @@ function App() {
           }
         }
       }
-      setUserList(CambiarColores(isColored, Listado));
+      setUserList(ChangeColor(isColored, Listado));
     }
   };
 
@@ -177,7 +177,7 @@ function App() {
               >
                 <td>
                   <img
-                    src={data.picture.large}
+                    src={data.picture.thumbnail}
                     alt={data.name.first+" "+data.name.last}
                   ></img>
                 </td>
