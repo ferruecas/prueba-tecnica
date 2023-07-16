@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/prueba-tecnica/static/css/main.2d70d298.css",
+    "main.js": "/prueba-tecnica/static/js/main.a6148277.js",
+    "static/js/787.8f163d29.chunk.js": "/prueba-tecnica/static/js/787.8f163d29.chunk.js",
+    "index.html": "/prueba-tecnica/index.html",
+    "main.2d70d298.css.map": "/prueba-tecnica/static/css/main.2d70d298.css.map",
+    "main.a6148277.js.map": "/prueba-tecnica/static/js/main.a6148277.js.map",
+    "787.8f163d29.chunk.js.map": "/prueba-tecnica/static/js/787.8f163d29.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d70d298.css",
+    "static/js/main.a6148277.js"
+  ]
+}
