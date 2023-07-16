@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+.row-1 {
+  background-color: #556677;
+}
+.row-2 {
+  background-color: #112233;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+
+
+.rowClass:hover {
+  background-color: #09f;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+table {
+
+  text-align: center;
+  color: #213547;
+
+
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: .6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color .25s
+}
