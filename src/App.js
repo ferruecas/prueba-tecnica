@@ -24,7 +24,7 @@ function App() {
 
   const ConsultarUsuarios = async () => {
     try {
-      const response = await fetch('https://randomuser.me/api/?results=5', {
+      const response = await fetch('https://randomuser.me/api/?results=100', {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
